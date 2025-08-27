@@ -1,0 +1,159 @@
+:root {
+        --a4-w-px: 1100px;
+        --a4-h-px: 1550px;
+        --color-bg: #18191a;
+        --color-bg-alt: #23272b;
+        --color-bg-sheet: #23272b;
+        --color-bg-page: #fff;
+        --color-text: #ffffff;
+        --color-accent: #2b81ff;
+        --color-border: #343a40;
+        --color-btn: #23272b;
+        --color-btn-hover: #2b81ff22;
+        --color-btn-active: #2b81ff44;
+        --color-shadow: rgba(82, 83, 79, 0.8);
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        background: var(--color-bg);
+        color: var(--color-text);
+      }
+      .ribbon {
+        height: 64px;
+        background: var(--color-bg-alt);
+        border-bottom: 1px solid var(--color-border);
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 12px;
+      }
+      .ribbon .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--color-accent);
+      }
+      .ribbon .menu {
+        display: flex;
+        gap: 6px;
+      }
+      .ribbon .menu button {
+        color: var(--color-text);
+        background: transparent;
+        border: 0;
+        padding: 6px 10px;
+        border-radius: 4px;
+      }
+      .ribbon .menu button:hover {
+        background: var(--color-btn-hover);
+      }
+      .app {
+        display: flex;
+        height: calc(100vh - 64px);
+      }
+      .main {
+        flex: 1;
+        overflow: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sheet {
+        width: var(--a4-w-px);
+        height: var(--a4-h-px);
+        background: var(--color-bg-sheet);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        box-shadow: 0 20px 60px var(--color-shadow);
+        border-radius: 4px;
+        padding: 20px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .page {
+        width: calc(var(--a4-w-px) - 80px);
+        height: calc(var(--a4-h-px) - 80px);
+        background: var(--color-bg-page);
+        color: #111827;
+        box-shadow: inset 0 0 0 1px var(--color-border);
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 48px 64px;
+        font-family: "Times New Roman", serif;
+        font-size: 15px;
+        line-height: 1.5;
+        position: relative;
+      }
+      .editor-toolbar {
+        width: var(--a4-w-px);
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .editor-toolbar .btn {
+        background: var(--color-btn);
+        color: var(--color-text);
+        border: 1px solid var(--color-border);
+      }
+      #menuContent {
+        width: 100%;
+        max-width: 900px;
+        margin-bottom: 20px;
+      }
+      mark.error {
+        background: rgba(255, 0, 0, 0.4);
+      }
+
+      /* Botões dentro da página */
+      .btn-adicionar, .btn-excluir {
+        position: absolute;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .btn-adicionar {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4caf50;
+        color: white;
+      }
+      .btn-adicionar:hover { background: #45a049; }
+
+      .btn-excluir {
+        top: 10px;
+        right: -5px;
+        background: #f44336;
+        color: #fff;
+      }
+      .btn-excluir:hover { background: #e53935; }
+
+      /* Elementos de mídia */
+      .media {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        max-width: 300px;
+        max-height: 300px;
+        border: 2px dashed transparent;
+        resize: both;
+        overflow: hidden;
+        cursor: move;
+      }
+      .media.active {
+        border: 2px dashed #2196f3;
+      }
+      .media img,
+      .media video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
